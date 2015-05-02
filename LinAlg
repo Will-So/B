@@ -1,0 +1,40 @@
+from __future__ import absolute_import, division, print_function
+from .expressions import Expr, shape, ElemWise
+
+__all__ = """VectorOp, MatrixOp, Inverse, Solve, SVD """
+
+
+class VectorOp(Expr):
+    """
+    Base class for operations that use vectors
+    """
+
+
+class MatrixOp(Expr):
+    """
+    base class for matrix operations.
+    """
+
+
+class Inverse(MatrixOp):
+    """
+    Computes the multicative inverse of a matrix.
+    """
+
+
+class Solve(MatrixOp):
+    """
+    Solve a linear matrix equation or a system of linear scalar equations
+    """
+
+
+class SVD(MatrixOp):
+    """
+    Singular Value Decomposition.
+    """
+
+
+class Inner(VectorOp):
+    """
+    Represents the inner product of two arrays
+    """
